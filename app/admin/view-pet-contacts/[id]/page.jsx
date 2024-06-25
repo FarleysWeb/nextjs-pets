@@ -12,11 +12,11 @@ async function fetchPetAndContacts(id) {
   if (ObjectId.isValid(id)) {
     const pet = await client
       .db()
-      .collection("pets")
+      .collection("Pets")
       .findOne({ _id: new ObjectId(id) })
     const contacts = await client
       .db()
-      .collection("contacts")
+      .collection("Contacts")
       .find({ petId: new ObjectId(id) })
       .toArray()
     return { pet, contacts }
