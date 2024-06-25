@@ -4,7 +4,7 @@ import PetCard from "./pet-card"
 
 async function fetchPets() {
   const client = await clientPromise
-  let pets = await client.db().collection("pets").find().toArray()
+  let pets = await client.db().collection("Pets").find().toArray()
   console.log("========== db hit =============")
 
   // return the pets object

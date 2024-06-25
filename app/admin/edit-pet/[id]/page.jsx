@@ -13,7 +13,7 @@ async function fetchPet(id) {
   if (ObjectId.isValid(id)) {
     const pet = client
       .db()
-      .collection("pets")
+      .collection("Pets")
       .findOne({ _id: new ObjectId(id) })
     return pet
   }

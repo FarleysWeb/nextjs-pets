@@ -644,3 +644,119 @@ textarea.form-field {
 .contact-list tr:nth-child(even) {
   background-color: #f1f1f1;
 }
+
+/** Chat Feature CSS **/
+
+.open-chat {
+  position: fixed;
+  bottom: 16px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  background-color: white;
+  display: flex;
+  box-shadow: 2px 2px 3px black;
+  z-index: 89;
+}
+
+.open-chat svg {
+  color: #5061f6;
+  margin: auto;
+}
+
+.chat-container {
+  position: fixed;
+  z-index: 90;
+  bottom: 10px;
+  right: 20px;
+  width: 290px;
+  height: 420px;
+  background-color: white;
+  box-shadow: 2px 2px 3px black;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(105%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease-out, transform .3s ease-out, visibility .3s ease-out;
+}
+
+.chat-container--visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.chat-log {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 14px;
+}
+
+.chat-title-bar {
+  padding: 10px 14px;
+  background-color: #5061f6;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.chat-title-bar h4 {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.chat-title-bar svg {
+  position: relative;
+  top: 3px;
+}
+
+.chat-message {
+  margin: 0 60px 5px 0;
+  font-size: .85rem;
+  display: flex;
+}
+
+.chat-message--self .chat-message-inner {
+  background-color: #5061f6;
+
+}
+
+.chat-message--self {
+  justify-content: flex-end;
+  margin: 0 0 5px 60px;
+}
+
+.chat-message-inner {
+  background-color: #afafaf;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 16px;
+}
+
+.chat-container input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+  font-family: inherit;
+  font-size: .85rem;
+  outline: none;
+  border-top: 1px solid #e6e6e6
+}
+
+.chat-unread-badge {
+  position: absolute;
+  background-color: red;
+  color: white;
+  top: 0;
+  right: 0;
+  border-radius: 20px;
+  padding: 2px 4px;
+  line-height: 1;
+  font-size: .75rem;
+
+}

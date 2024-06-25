@@ -25,7 +25,7 @@ export async function POST(request) {
   if (typeof incoming.description != "string") {
     incoming.description = ""
   }
-  
+
   let ourObject = { name: sanitizeHtml(incoming.name, sanitizeOptions), birthYear: new Date().getFullYear(), species: sanitizeHtml(incoming.species, sanitizeOptions), description: sanitizeHtml(incoming.description, sanitizeOptions) }
 
   if (incoming.birthYear > 999 && incoming.birthYear < 9999) {
@@ -42,6 +42,6 @@ export async function POST(request) {
   }
 
   const client = await clientPromise
-  client.db().collection("pets").insertOne(ourObject)
+  client.db().collection("Pets").insertOne(ourObject)
   return NextResponse.json({ message: "Success" })
 }

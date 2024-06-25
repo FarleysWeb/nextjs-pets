@@ -4,7 +4,7 @@ import PetsListSection from "../lib/PetsListSection"
 
 async function getData() {
   const client = await clientPromise
-  const pets = await client.db().collection("pets").find().toArray()
+  const pets = await client.db().collection("Pets").find().toArray()
 
   const weatherPromise = await fetch("https://api.weather.gov/gridpoints/MFL/110,50/forecast")
   const weatherData = await weatherPromise.json()

@@ -9,9 +9,9 @@ export async function POST(request) {
   if (adminCookie == process.env.SESSIONCOOKIEVALUE) {
     const pusher = new Pusher({
       appId: process.env.PUSHERID,
-      key: process.env.PUSHERKEY,
+      key: process.env.NEXT_PUBLIC_PUSHERKEY,
       secret: process.env.PUSHERSECRET,
-      cluster: "us3",
+      cluster: "us2",
       useTLS: true
     })
 

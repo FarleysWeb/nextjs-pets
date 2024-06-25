@@ -10,7 +10,7 @@ export async function POST(request) {
     const client = await clientPromise
     client
       .db()
-      .collection("pets")
+      .collection("Pets")
       .deleteOne({ _id: new ObjectId(incoming._id) })
     return NextResponse.json({ message: "Success" })
   }
